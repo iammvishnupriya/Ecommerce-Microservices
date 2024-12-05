@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: "SERVICEREGISTRY"
+server:
+  port: 8761
+  # Port where Eureka Server will run
+
+eureka:
+  client:
+    register-with-eureka: false
+    # We don't want Eureka Server to register itself with Eureka.
+    fetch-registry: false
+    # No need to fetch registry for Eureka Server
+  server:
+    enable-self-preservation: false
+    # Disable self-preservation (optional for small projects)
+
+
+
+#spring.application.name=SERVICEREGISTRY
+#server.port=8761
+#  # Port for Eureka Server
+#
+#eureka.client.register-with-eureka=false
+#eureka.client.fetch-registry=false
+#eureka.server.enable-self-preservation=false
+#
+##logging.level.com.netflix.eureka=DEBUG
+##logging.level.com.netflix.discovery=DEBUG

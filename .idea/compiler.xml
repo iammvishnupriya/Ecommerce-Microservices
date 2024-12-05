@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="PAYMENTS" />
+        <module name="CUSTOMERS" />
+        <module name="PRODUCTS" />
+        <module name="SERVICEREGISTRY" />
+        <module name="ORDERS" />
+        <module name="ORDERSTATUS" />
+        <module name="APIGATEWAY" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="APIGATEWAY" options="-parameters" />
+      <module name="CUSTOMERS" options="-parameters" />
+      <module name="ORDERS" options="-parameters" />
+      <module name="ORDERSTATUS" options="-parameters" />
+      <module name="PAYMENTS" options="-parameters" />
+      <module name="PRODUCTS" options="-parameters" />
+      <module name="SERVICEREGISTRY" options="-parameters" />
+    </option>
+  </component>
+</project>

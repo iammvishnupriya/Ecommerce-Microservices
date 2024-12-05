@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/APIGATEWAY/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CUSTOMERS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ORDERS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ORDERSTATUS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PAYMENTS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PRODUCTS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SERVICEREGISTRY/src/main/java" charset="UTF-8" />
+  </component>
+</project>

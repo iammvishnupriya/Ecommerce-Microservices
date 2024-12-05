@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: PRODUCTS # Unique name for the service
+  cloud:
+    config:
+      uri: http://localhost:8888  # Config Server URI
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Eureka Server URL
+    fetch-registry: true
+    register-with-eureka: true
+
+#spring:
+#  application:
+#    name: "PRODUCTS"
+#
+#server:
+#  port: 8081
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#    fetch-registry: true
+#    register-with-eureka: true
+
+
+#spring.application.name=PRODUCTS
+#spring.data.mongodb.uri=mongodb://localhost:27017/ecommerce
+#spring.data.mongodb.database=Ecommerce_Product
+#server.port=8081
+##
+## Eureka Client Configuration
+#spring.application.name=PRODUCTS
+## Change this for each service
+#server.port=8081
+## Change the port for each service
+#
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+## Eureka Server URL
+#eureka.instance.prefer-ip-address=true
+## Optional: Use IP instead of hostname
