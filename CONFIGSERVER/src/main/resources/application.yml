@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/your-username/ecommerce-config-repo
+          uri: https://github.com/iammvishnupriya/Ecommerce-Microservices.git
           default-label: main
 eureka:
   client:
