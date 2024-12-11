@@ -1,5 +1,6 @@
 package com.MICROSERVICES.CUSTOMERS.CUSTOMERS.Model;
 
+import com.MICROSERVICES.CUSTOMERS.CUSTOMERS.DTO.AddressDTO;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,10 +13,10 @@ public class Customer {
     @Id
     private String id;
     private String customerId;
-    private String name;
-    private String email;
-    private String phone;
-    private Address address;
+    private String customerName;  // Updated field name
+    private String customerEmail; // Updated field name
+    private String customerPhone; // Updated field name
+    private AddressDTO customerAddress; // Updated field type
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -35,36 +36,36 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public Address getAddress() {
-        return address;
+    public AddressDTO getCustomerAddress() {
+        return customerAddress;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setCustomerAddress(AddressDTO customerAddress) {
+        this.customerAddress = customerAddress;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -83,13 +84,13 @@ public class Customer {
         this.updatedAt = updatedAt;
     }
 
-    public Customer(String id, String customerId, String name, String email, String phone, Address address, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Customer() {
         this.id = id;
         this.customerId = customerId;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+        this.customerAddress = customerAddress;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -97,49 +98,6 @@ public class Customer {
 
 
 
-@Data
-class Address {
-    private String street;
-    private String city;
-    private String state;
-    private String zipCode;
 
-    public String getStreet() {
-        return street;
-    }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
-
-    public Address(String street, String city, String state, String zipCode) {
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zipCode = zipCode;
-    }
-}

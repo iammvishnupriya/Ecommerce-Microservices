@@ -12,7 +12,7 @@ public class Payment {
     private String paymentId; // MongoDB ObjectId or UUID
     private String orderId;
     private String customerId;
-    private String productId; // Optional
+
     private double amount;
     private String method; // Payment method (Credit Card, etc.)
     private LocalDateTime createdAt;
@@ -42,13 +42,7 @@ public class Payment {
         this.customerId = customerId;
     }
 
-    public String getProductId() {
-        return productId;
-    }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
 
     public double getAmount() {
         return amount;

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -23,20 +22,20 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer updateCustomer(String id, Customer customer) {
-        Customer existingCustomer = customerRepository.findById(id)
+    public Customer updateCustomer(String customerId, Customer customer) {
+        Customer existingCustomer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
-        existingCustomer.setName(customer.getName());
-        existingCustomer.setEmail(customer.getEmail());
-        existingCustomer.setPhone(customer.getPhone());
-        existingCustomer.setAddress(customer.getAddress());
+        existingCustomer.setCustomerName(customer.getCustomerName());
+        existingCustomer.setCustomerEmail(customer.getCustomerEmail());
+        existingCustomer.setCustomerPhone(customer.getCustomerPhone());
+        existingCustomer.setCustomerAddress(customer.getCustomerAddress());
         existingCustomer.setUpdatedAt(LocalDateTime.now());
         return customerRepository.save(existingCustomer);
     }
 
     @Override
-    public Customer getCustomerById(String id) {
-        return customerRepository.findById(id)
+    public Customer getCustomerByCustomerId(String customerId) {
+        return customerRepository.findCustomerByCustomerId(customerId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
     }
 
@@ -46,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(String id) {
-        customerRepository.deleteById(id);
+    public void deleteCustomer(String customerId) {
+        customerRepository.deleteById(customerId);
     }
 }

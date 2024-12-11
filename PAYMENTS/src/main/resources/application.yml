@@ -4,6 +4,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888  # Config Server URI
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Ecommerce-PAYMENTS
 server:
   port: 8084
 

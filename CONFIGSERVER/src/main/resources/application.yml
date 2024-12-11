@@ -10,6 +10,10 @@ spring:
         git:
           uri: https://github.com/iammvishnupriya/Ecommerce-Microservices.git
           default-label: main
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Ecommerce-Microservices
+
 eureka:
   client:
     service-url:

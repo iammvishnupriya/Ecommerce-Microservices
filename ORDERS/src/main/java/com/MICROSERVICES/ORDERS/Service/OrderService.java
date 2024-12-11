@@ -1,8 +1,15 @@
 package com.MICROSERVICES.ORDERS.Service;
 import com.MICROSERVICES.ORDERS.DTO.OrderDTO;
 import com.MICROSERVICES.ORDERS.Model.Order;
+import com.MICROSERVICES.PRODUCTS.DTO.ProductDTO;
+
 import java.util.List;
 public interface OrderService {
+
+
+    String getProductDetails(String productId);
+    String fetchAllProducts();
+
     Order createOrder(OrderDTO orderDTO);
 
     List<Order> getAllOrders(); // Fetch all orders

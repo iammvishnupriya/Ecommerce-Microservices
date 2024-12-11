@@ -3,7 +3,6 @@ package com.MICROSERVICES.PAYMENTS.DTO;
 public class PaymentDTO {
     private String orderId;
     private String customerId;
-    private String productId; // Optional
     private double amount;
     private String method;
 
@@ -23,13 +22,7 @@ public class PaymentDTO {
         this.customerId = customerId;
     }
 
-    public String getProductId() {
-        return productId;
-    }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
 
     public double getAmount() {
         return amount;

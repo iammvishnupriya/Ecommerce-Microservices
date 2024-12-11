@@ -17,9 +17,21 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("/create")
+    @PostMapping("create")
     public ResponseEntity<Order> createOrder(@RequestBody OrderDTO orderDTO) {
         return new ResponseEntity<>(orderService.createOrder(orderDTO), HttpStatus.CREATED);
+    }
+
+
+    @GetMapping("/products")                // starting here as inter service communication
+    public ResponseEntity<String> getAllProducts() {
+        String allProducts = orderService.fetchAllProducts();
+        return new ResponseEntity<>(allProducts, HttpStatus.OK);
+    }
+    @GetMapping("/products/{productId}")
+    public ResponseEntity<String> getProductDetails(@PathVariable String productId) {
+        String productDetails = orderService.getProductDetails(productId);
+        return new ResponseEntity<>(productDetails, HttpStatus.OK);
     }
 
 

@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class ProductDTO {
+    private String productId;
     private String id;
     private String name;
     private String description;
@@ -64,8 +65,20 @@ public class ProductDTO {
         return image;
     }
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public ProductDTO(String productId) {
+        this.productId = productId;
     }
 
     public ProductDTO(String id, String name, String description, double price, String category, int stock, String image) {
@@ -76,5 +89,9 @@ public class ProductDTO {
         this.category = category;
         this.stock = stock;
         this.image = image;
+
+    }
+
+    public ProductDTO() {
     }
 }

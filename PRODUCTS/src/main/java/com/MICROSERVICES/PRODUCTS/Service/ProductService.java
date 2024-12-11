@@ -5,6 +5,7 @@ import com.MICROSERVICES.PRODUCTS.Model.Product;
 import java.util.List;
 
 public interface ProductService {
+    Product getProductByproductId(String productId);
     Product createProduct(Product product);
     Product updateProduct(String id, Product product);
     Product getProductById(String id);

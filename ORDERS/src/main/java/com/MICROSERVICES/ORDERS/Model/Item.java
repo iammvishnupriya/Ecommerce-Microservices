@@ -28,4 +28,10 @@ public class Item {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Item() {
+        this.productId = productId;
+        this.quantity = quantity;
+        this.price = price;
+    }
 }

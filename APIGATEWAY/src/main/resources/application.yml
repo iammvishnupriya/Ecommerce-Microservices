@@ -5,30 +5,27 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: customer-service
-          uri: lb://CUSTOMERS
+        - id: CUSTOMERS
+          uri: http://localhost:8082
           predicates:
             - Path=/customers/**
-
-        - id: order-service
-          uri: lb://ORDERS
+        - id:  ORDERS
+          uri: http://localhost:8083
           predicates:
             - Path=/orders/**
-
-        - id: orderstatus-service
-          uri: lb://ORDERSTATUS
+        - id: ORDERSTATUS
+          uri: http://localhost:8085
           predicates:
             - Path=/orderstatus/**
-
-        - id: payment-service
-          uri: lb://PAYMENTS
+        - id: PAYMENTS
+          uri: http://localhost:8084
           predicates:
             - Path=/payments/**
-
-        - id: product-service
-          uri: lb://PRODUCTS
+        - id: PRODUCTS
+          uri: http://localhost:8081
           predicates:
             - Path=/products/**
+
 
   eureka:
     client:
@@ -39,6 +36,103 @@ spring:
 
 server:
   port: 8080
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.client: DEBUG
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
+    org.springframework.cloud.gateway.filter: DEBUG
+    org.springframework.cloud.gateway.route: DEBUG
+    org.springframework.cloud.gateway.support: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG
+    org.springframework.web.servlet: DEBUG
+
+#spring:
+#  application:
+#    name: "APIGATEWAY"
+#
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: customer-service
+#          uri: lb://CUSTOMERS
+#          predicates:
+#            - Path=/customers/**
+#
+#        - id: order-service
+#          uri: lb://ORDERS
+#          predicates:
+#            - Path=/orders/**
+#
+#        - id: orderstatus-service
+#          uri: lb://ORDERSTATUS
+#          predicates:
+#            - Path=/orderstatus/**
+#
+#        - id: payment-service
+#          uri: lb://PAYMENTS
+#          predicates:
+#            - Path=/payments/**
+#
+#        - id: product-service
+#          uri: lb://PRODUCTS
+#          predicates:
+#            - Path=/products/**
+#
+#  eureka:
+#    client:
+#      service-url:
+#        defaultZone: http://localhost:8761/eureka/  # Eureka Server URL
+#      fetch-registry: true
+#      register-with-eureka: true
+#
+#server:
+#  port: 8080  # API Gateway port
+
+#spring:
+#  application:
+#    name: "APIGATEWAY"
+#
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: customer-service
+#          uri: lb://CUSTOMERS
+#          predicates:
+#            - Path=/customers/**
+#
+#        - id: order-service
+#          uri: lb://ORDERS
+#          predicates:
+#            - Path=/orders/**
+#
+#        - id: orderstatus-service
+#          uri: lb://ORDERSTATUS
+#          predicates:
+#            - Path=/orderstatus/**
+#
+#        - id: payment-service
+#          uri: lb://PAYMENTS
+#          predicates:
+#            - Path=/payments/**
+#
+#        - id: product-service
+#          uri: lb://PRODUCTS
+#          predicates:
+#            - Path=/products/**
+#
+#  eureka:
+#    client:
+#      service-url:
+#        defaultZone: http://localhost:8761/eureka/
+#      fetch-registry: true
+#      register-with-eureka: true
+#
+#server:
+#  port: 8080
 
 
 #spring:

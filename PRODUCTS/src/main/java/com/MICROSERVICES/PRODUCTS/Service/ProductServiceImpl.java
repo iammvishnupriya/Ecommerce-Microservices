@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -20,6 +22,7 @@ public class ProductServiceImpl implements ProductService {
         product.setUpdatedAt(LocalDateTime.now());
         return productRepository.save(product);
     }
+
 
     @Override
     public Product updateProduct(String id, Product product) {
@@ -39,6 +42,19 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
+    @Override
+    public Product getProductByproductId(String productId) {
+        return productRepository.findProductByProductId(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found with productId: " + productId));
+    }
+
+//    public Product getProductByproductId(String productId) {
+//        List<Product> products = productRepository.findAll();
+//        return products.stream()
+//                .filter(product -> product.getProductId().equals(productId))
+//                .findFirst()
+//                .orElseThrow(() -> new RuntimeException("Product not found with productId: " + productId));
+//    }
 
     @Override
     public List<Product> getAllProducts() {

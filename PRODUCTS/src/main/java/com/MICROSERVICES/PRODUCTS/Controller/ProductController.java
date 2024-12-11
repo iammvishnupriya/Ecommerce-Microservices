@@ -19,6 +19,11 @@ public class ProductController {
         return productService.createProduct(product);
     }
 
+    @GetMapping("/products/{productId}")
+    public Product getProductByproductId(@PathVariable String productId){
+        return productService.getProductByproductId(productId);
+    }
+
     @PutMapping("/{id}")
     public Product updateProduct(@PathVariable String id, @RequestBody Product product) {
         return productService.updateProduct(id, product);
